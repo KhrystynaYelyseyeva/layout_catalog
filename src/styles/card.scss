@@ -3,15 +3,28 @@
 
 .card {
   width: $card-width;
-  padding: 30px 14px 14px;
+  padding: 15px 14px 14px;
 
-  border: 1px solid #f3f3f3;
+  border: 1px solid $card-border-color;
   border-radius: 5px;
 
   &__img {
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 45px;
+    width: 166px;
+    height: 164px;
+    padding: 12px 0;
+    margin: 0 auto 30px;
+    border: 3px solid transparent;
+    border-radius: 5px 5px 0 0;
+
+    @include time-action(
+      $rule: transform,
+      $time: 1s
+    );
+
+    &:hover {
+      border-color: $card-border-color;
+      transform: scale(1.2);
+    }
   }
 
   &__title {
@@ -68,7 +81,7 @@
     background: $main-color;
     border-radius: 5px;
 
-    @include time-action(background);
+    @include time-action($rule: background);
 
     &:hover {
       background: #fff;

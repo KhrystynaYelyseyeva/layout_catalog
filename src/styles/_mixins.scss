@@ -11,6 +11,8 @@
   align-content: $align-content;
 }
 
-@mixin time-action($rule) {
-  transition: $rule 300ms ease-in-out;
+@mixin time-action(
+  $rule: all,
+  $time: 300ms) {
+  transition: $rule $time ease;
 }
